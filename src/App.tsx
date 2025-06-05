@@ -13,10 +13,13 @@ import Button from './components/button';
 import ButtonIcon from './components/button-icon';
 import InputText from './components/input-text';
 import InputCheckbox from './components/input-checkbox';
+import Card from './components/card';
+import Container from './components/container';
+import Skeleton from './components/skeleton';
 
 export default function App() {
   return (
-    <div>
+    <Container>
       <div className="flex gap-10 p-4">
         <Text as="h1" variant="body-md" className="text-green-base">
           Teste
@@ -39,9 +42,11 @@ export default function App() {
         <Icon svg={SpinIcon} width="30px" animate />
       </div>
 
-      <div className="flex gap-10 p-4">
+      <div className="flex gap-10 p-4 ">
         <Badge variant="secondary">5</Badge>
         <Badge variant="primary">2 de 5</Badge>
+
+        <Badge loading>10</Badge>
       </div>
 
       <div>
@@ -52,6 +57,7 @@ export default function App() {
         <ButtonIcon icon={TrashIcon} />
         <ButtonIcon icon={PlusIcon} variant="secondary" />
         <ButtonIcon icon={TrashIcon} variant="tertiary" />
+        <ButtonIcon loading icon={TrashIcon} />
       </div>
 
       <div className="flex gap-10 p-4">
@@ -60,7 +66,19 @@ export default function App() {
 
       <div className="flex gap-10 p-4">
         <InputCheckbox />
+
+        <InputCheckbox loading />
       </div>
-    </div>
+
+      <div className="flex gap-10 p-4">
+        <Card size="md">Aoba</Card>
+      </div>
+
+      <div className="flex gap-10 p-4">
+        <Skeleton className="h-6" />
+        <Skeleton className="h-6" />
+        <Skeleton className="w-96 h-6" />
+      </div>
+    </Container>
   );
 }
